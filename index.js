@@ -37,7 +37,7 @@ if (process.env.TRAVIS) {
   commit_message = '' // wercker does not expose commit message
   branch = process.env.WERCKER_GIT_BRANCH
   ci = 'wercker'
-} else if (process.env.JENKINS_URL) {
+} else if (process.env.JENKINS_HOME || process.env.JENKINS_URL) {
   repo = process.GIT_REPO // requires this is set manually in jenkins
 
   sha = env.GIT_COMMIT
